@@ -8,8 +8,6 @@
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "install": "^0.13.0",
-    "mathjs": "^6.1.0",
-    "ml-matrix": "^6.4.0",
     "npm": "^6.10.3"
   },
   "devDependencies": {
