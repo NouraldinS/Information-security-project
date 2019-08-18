@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Start </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="form-section" style="background: url('images/BEFBPXI4RS.jpg');">
+    <div class="overlay-bg">
+      <form method="POST" action="/send">
+        <div id="main">
+          <div id="content">
+            <div>
+              <h3> User 1 </h3>
+            </div>
+            <div class="plaintext">
+              <input type="text" name="message" id="message" placeholder=" Enter Plaintext" autocomplete="off" required>
+              <input type="text" name="username" id="username" placeholder="To whom is this message?" autocomplete="off" required>
+            </div>
+            <div>
+              <button type="button" onclick="submitForm(this)">Send</button>
+            </div>
+            <hr>
+            <div class="ciphertext">
+              <div class="cipher">
+                <ul class="messages">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+<script src="/js/chat.js" charset="utf-8"></script>
+</html>

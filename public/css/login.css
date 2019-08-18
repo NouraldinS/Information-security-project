@@ -1,0 +1,51 @@
+body, html{
+    margin: 0;
+}
+
+.form-section {
+    margin: 0px;
+    background-repeat: no-repeat !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    height: 100vh;
+    position: relative;
+}
+
+.form-section .overlay-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1); 
+}
+
+#main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 65px 0px;
+    text-align: center;
+    margin: 0 auto;
+    background: #fffffff2;
+}
+
+#content input{
+    padding: 20px 35px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin: 10px auto;
+}
+
+#content button {
+    margin: 8px auto;
+    padding: 9px 100px;
+    background: #2fc135;
+    color: #FFF;
+    display: block;
+}
