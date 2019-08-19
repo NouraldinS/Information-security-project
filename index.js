@@ -37,8 +37,10 @@ app.get('/read', (req, res) => {
   const { username } = req.cookies;
   const data = database.readFor(username);
   if (!data) return res.send({ empty: true });
+  console.log('data', data);
+  const { cypher } = data.message;
   data.message = decryptHill(data.message.cypher, data.message.box);
-  return res.send({ from: data.from, message: data.message.plain });
+  return res.send({ from: data.from, message: data.message.plain, cypher });
 });
 
 app.use(express.static('public'));

@@ -3,9 +3,10 @@ setInterval(() => {
     .then((res) => res.json())
     .then((result) => {
       if (!result.empty) {
+        console.log('result', result);
         const list = document.getElementsByClassName('messages')[0];
         const li = document.createElement('li');
-        li.textContent = `${result.from}: ${result.message}`;
+        li.textContent = `${result.from}: ${result.cypher} => ${result.message}`;
         list.appendChild(li);
       }
     });
@@ -25,8 +26,13 @@ function submitForm(ev) {
     redirect: 'follow',
     referrer: 'no-referrer',
     body: JSON.stringify({ username, message }),
-  })
-    .then((res) => {
-
-    });
+  });
 }
+
+(function () {
+  const cookies = document.cookie.split(';').reduce((cookies, cookie) => {
+    const [name, value] = cookie.split('=');
+    return { ...cookies, [name]: value };
+  }, {});
+  document.getElementById('user-title').textContent = cookies.username;
+}());
