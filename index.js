@@ -38,9 +38,9 @@ app.get('/read', (req, res) => {
   const data = database.readFor(username);
   if (!data) return res.send({ empty: true });
   console.log('data', data);
-  const { cypher } = data.message;
+  const { cypher, box: { plain } } = data.message;
   data.message = decryptHill(data.message.cypher, data.message.box);
-  return res.send({ from: data.from, message: data.message.plain, cypher });
+  return res.send({ from: data.from, message: plain, cypher });
 });
 
 app.use(express.static('public'));
